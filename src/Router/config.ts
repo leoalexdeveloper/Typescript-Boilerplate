@@ -1,4 +1,5 @@
 import { express } from './index'
+
 export const configs = {
   settings: [
     express.urlencoded({ extended: true }),

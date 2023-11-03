@@ -19,7 +19,9 @@ export class Router {
   /* load routes from routes file */
   loadRoutes (): Router {
     routes.forEach(route => {
-      this.app[route.method](route.path, [...route.validation], [...route.middlewares], [...route.actions])
+      /* route.validation returns an array and because of this its not necessary put route.validation between
+      brackets with the spread operator */
+      this.app[route.method](route.path, route.validation, [...route.middlewares], [...route.actions])
     })
 
     /* this function return an instance of Router */
@@ -32,6 +34,7 @@ export class Router {
   }
 }
 
+/* exporting the same instance of Router through the router constant */
 const router = new Router()
 
 export { router }

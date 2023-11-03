@@ -1,4 +1,5 @@
 import { type routeType } from '../Types/router'
+/* FallbackRoutes for each method */
 export const fallbackRoutes: routeType[] = [
   {
     path: '*',
