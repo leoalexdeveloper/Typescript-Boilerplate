@@ -4,8 +4,16 @@ import type { ValidationChain } from 'express-validator'
 
 type supportedHtmlVerbs = 'get' | 'post' | 'put' | 'patch' | 'delete'
 
-type middlewareType = (req: Request, res: Response, next: NextFunction) => Promise<void> | void
-type actionType = (req: Request, res: Response) => Promise<void> | void
+type middlewareType = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => Promise<void> | void
+
+type actionType = (
+  req: Request,
+  res: Response
+) => Promise<void> | void
 
 interface routeType {
   path: string
@@ -15,4 +23,13 @@ interface routeType {
   actions: actionType[]
 }
 
-export type { Request, Response, NextFunction, ValidationChain, middlewareType, actionType, supportedHtmlVerbs, routeType }
+export type {
+  Request,
+  Response,
+  NextFunction,
+  ValidationChain,
+  middlewareType,
+  actionType,
+  supportedHtmlVerbs,
+  routeType
+}
